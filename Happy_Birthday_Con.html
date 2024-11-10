@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Friend Card</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+        
+        /* Gradient animation for the background */
+        body {
+            font-family: 'Indie Flower', cursive !important;
+            background: linear-gradient(120deg, #000000, #ea00ff);
+            background-size: 200% 200%;
+            animation: gradientAnimation 10s ease infinite;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Ensure the body fills the viewport */
+            display: flex;
+            justify-content: center;
+            align-items: center; /* Center content */
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        ::selection {
+            background: transparent;
+        }
+
+        h4 {
+            font-size: 26px;
+            line-height: 1px;
+            font-family: 'Amatic SC', cursive !important;
+        }
+
+        .color1 { color: #711bbc; } /* MOUNTAIN MEADOW */
+        .color2 { color: #552bc0; } /* TALL POPPY */
+
+        .card {
+            color: #cb10a9; /* SHERPA BLUE */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300px;
+            height: 400px;
+            background: #fc9ee0;
+            transform-style: preserve-3d;
+            transform: translate(-50%, -50%) perspective(2000px);
+            box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+            transition: 1s;
+        }
+
+        .card:hover {
+            transform: translate(-50%, -50%) perspective(2000px) rotate(15deg) scale(1.2);
+            box-shadow: inset 20px 0 50px rgba(255, 80, 80, 0.5), 0 10px 100px rgba(0,0,0,.5);
+        }
+
+        .card:before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #d68dd6;
+            transform-origin: bottom;
+            transform: skewX(-45deg);
+        }
+
+        .card:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -5px;
+            width: 5px;
+            height: 100%;
+            background: #dd58f4;
+            transform-origin: left;
+            transform: skewY(-45deg);
+        }
+
+        .card .imgBox {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-origin: left;
+            transition: .7s;
+        }
+
+        .card .bark {
+            position: absolute;
+            background: #d19fff;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: .7s;
+        }
+
+        .card .imgBox img {
+            min-width: 250px;
+            max-height: 400px;
+        }
+
+        .card:hover .imgBox {
+            transform: rotateY(-135deg);
+        }
+
+        .card:hover .bark {
+            opacity: 1;
+            transition: .6s;
+            box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+        }
+
+        .card .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 0 0 0 10px;
+            z-index: -1;
+            margin-top: 70px;
+        }
+
+        .card .details p {
+            font-size: 15px;
+            line-height: 5px;
+            transform: rotate(-10deg);
+            padding: 0 0 0 20px;
+        }
+
+        .card .details h4 {
+            text-align: center;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card">
+        <div class="imgBox">
+            <div class="bark"></div>
+            <img src="Untitled Project (17).jpg" alt="Best Friend Image">
+        </div>
+        <div class="details">
+            <h4 class="color1">To My Amazing Friend</h4>
+            <h4 class="color2 margin">(A True Gem)</h4>
+            <p>Dear Best Friend,</p>
+            <p>I just want you to know...</p>
+            <p>You’re an incredible friend,</p>
+            <p>a kind soul, and a good daughter.</p>
+            <p>You are the absolute best,</p>
+            <p>and I’m so lucky to have you</p>
+            <p>in my life.</p>
+            <p>Thank you for being you!</p>
+            <p class="text-right">With love, always</p>
+            <p class="text-right">♥ Your Bestie</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
